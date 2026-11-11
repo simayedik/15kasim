@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sana Küçük Bir Sürprizim Var ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff0f2, #fce4ec, #fff5e9);
+  font-family: Georgia, serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  color: #65404b;
+  overflow-x: hidden;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  color: #e8a0b2;
+  animation: float 9s linear infinite;
+  opacity: .6;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 620px;
+  background: rgba(255,255,255,.82);
+  padding: 45px 30px;
+  border-radius: 24px;
+  box-shadow: 0 15px 50px rgba(130,70,90,.12);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.small {
+  font-family: Arial, sans-serif;
+  color: #c27b91;
+  font-size: 12px;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: clamp(30px, 7vw, 43px);
+  font-weight: normal;
+  color: #a65370;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+button {
+  border: none;
+  background: #c66f89;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background: #a94e6c;
+  transform: translateY(-3px);
+}
+
+.letter {
+  display: none;
+  text-align: left;
+  line-height: 2;
+  font-size: 17px;
+  margin-top: 30px;
+  animation: appear 1s ease;
+}
+
+.letter h2 {
+  text-align: center;
+  color: #a65370;
+  font-weight: normal;
+  margin-bottom: 25px;
+}
+
+.letter p {
+  margin-bottom: 18px;
+}
+
+.signature {
+  text-align: right;
+  color: #a65370;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+.footer {
+  margin-top: 35px;
+  color: #bd8b98;
+  font-size: 13px;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 480px) {
+  .container { padding: 35px 23px; }
+  .letter { font-size: 16px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="container">
+
+  <div class="small">SADECE SANA ÖZEL</div>
+
+  <h1>Merhaba, güzel insanım ❤️</h1>
+
+  <p class="subtitle">
+    Sana küçük bir sürpriz hazırladım.<br>
+    Ama önce bir sorum var...
+  </p>
+
+  <button onclick="openLetter()">
+    Mektubunu aç 💌
+  </button>
+
+  <div class="letter" id="letter">
+
+    <h2>Sevgili en sevdiğim insan,</h2>
+
+    <p>
+      Nereden başlasam bilemedim.
+      Sana güzel şeyler söylemek istiyorum ama
+      bazen kelimeler hissettiklerimin yanında
+      biraz yetersiz kalıyor.
+    </p>
+
+    <p>
+      Hayatıma girdiğinden beri bazı şeyler
+      daha güzel, bazı günler daha anlamlı.
+      Bazen sadece seninle konuşmak bile
+      bütün günümü güzelleştirmeye yetiyor.
+    </p>
+
+    <p>
+      Bir de şu var...
+      Beni bu kadar kendine alıştırmanın
+      hesabını bir gün soracağım. 😄
+    </p>
+
+    <p>
+      Şaka bir yana, iyi ki varsın.
+      İyi ki hayatımdasın.
+      Birlikte daha çok anı biriktirmeyi,
+      daha çok gülmeyi ve nice güzel günleri
+      seninle yaşamayı istiyorum.
+    </p>
+
+    <p>
+      Bu küçük hediye belki her şeyi anlatamaz
+      ama bilmeni istediğim bir şey var:
+      Sen benim için gerçekten çok özelsin.
+    </p>
+
+    <div class="signature">
+      Seni çok seven biri ❤️
+    </div>
+
+  </div>
+
+  <div class="footer">
+    Küçük bir internet sayfası, kocaman bir sevgi. ♡
+  </div>
+
+</div>
+
+<script>
+function openLetter() {
+  document.getElementById("letter").style.display = "block";
+  document.querySelector("button").style.display = "none";
+}
+
+const hearts = document.getElementById("hearts");
+
+for (let i = 0; i < 18; i++) {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "♥";
+  heart.style.left = Math.random() * 100 + "%";
+  heart.style.animationDelay = Math.random() * 9 + "s";
+  heart.style.animationDuration = (7 + Math.random() * 7) + "s";
+  heart.style.fontSize = (14 + Math.random() * 18) + "px";
+  hearts.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
